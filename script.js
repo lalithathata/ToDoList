@@ -16,7 +16,9 @@ let isEdited = false;
 let todos = JSON.parse(localStorage.getItem("todoList"));
 
 
-//refresh task list every day
+if(todos)
+   {
+       //refresh task list every day
 for (var i = 0; i < todos.length; i++) {
     if (todos[i].taskDate == currentDate) {
         displayTodo("all");
@@ -26,8 +28,8 @@ for (var i = 0; i < todos.length; i++) {
 }
 localStorage.setItem("todoList", JSON.stringify(todos));
 displayTodo("all");
-
-
+   }
+   
 
 
 
